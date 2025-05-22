@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  profile-app:             # change service name to match container/app purpose
+    build: .
+    container_name: profile-app    # keep container name consistent with service name
+    ports:
+      - "3001:3000"        # host 3001 mapped to container 3000
+    restart: always
+    environment:
+      MONGO_URI: mongodb+srv://chandra98au:6U1NUe5EeRyRjt6w@cluster0.aymawxs.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+networks:
+  app-network:
+    driver: bridge
