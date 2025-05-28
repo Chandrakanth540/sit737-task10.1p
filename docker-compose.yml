@@ -1,0 +1,13 @@
+services:
+  calculator-service:
+    image: node-app
+    container_name: node-app
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/add?num1=5&num2=3"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+    restart: always

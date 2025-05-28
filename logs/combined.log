@@ -1,0 +1,4 @@
+{"level":"info","message":"Calculator microservice running on http://localhost:3000","service":"calculator-microservice"}
+{"level":"info","message":"Addition: 5 + 3 = 8","service":"calculator-microservice"}
+{"level":"info","message":"Calculator microservice running on http://localhost:8080","service":"calculator-microservice"}
+{"level":"info","message":"Addition: 5 + 3 = 8","service":"calculator-microservice"}
